@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Convertisseur AMC-TEXT vers GIFT</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.2/css/bulma.css" integrity="sha256-8BrtNNtStED9syS9F+xXeP815KGv6ELiCfJFQmGi1Bg=" crossorigin="anonymous" />
+    </head>
+    <body>
+        <form action="/convert" onsubmit="formSubmit();" method="POST">
+            <textarea type="text" id="area" class="textarea is-info" name="coreFile" placeholder="Copier-coller le contenu de votre fichier AMC-TXT"></textarea>
+            <input type="submit" class="button" name="envoie" value="CONVERTIR"/>
+        </form>
+    </body>
+    
+    <script>
+        function formSubmit() {
+            setTimeout(() => {
+                document.getElementById('area').value = "";
+            }, 1);
+            return true;
+        }
+    </script>
+    
+</html>

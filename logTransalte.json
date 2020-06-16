@@ -1,0 +1,323 @@
+[
+  [
+    {
+      "nomOption": "PaperSize",
+      "valeur": " A4 "
+    },
+    {
+      "nomOption": "Lang",
+      "valeur": " FR "
+    },
+    {
+      "nomOption": "Title",
+      "valeur": " Mon premier questionnaire "
+    },
+    {
+      "nomOption": "Presentation",
+      "valeur": " Veuillez répondre aux questions ci-dessous du mieux que vous pouvez. Les questions marquées d'un [[\\multiSymbole{}]] peuvent avoir zéro, une ou plusieurs bonnes réponses. "
+    }
+  ],
+  [
+    "# AMC-TXT source "
+  ],
+  [
+    {
+      "groupeQ": [
+        {
+          "question": " Quelle est la capitale du Cameroun ?  ",
+          "reponse": [
+            {
+              "reponseStr": "Yaoundé",
+              "right": true
+            },
+            {
+              "reponseStr": "Douala",
+              "right": false
+            },
+            {
+              "reponseStr": "Kribi",
+              "right": false
+            }
+          ],
+          "option": [],
+          "strat": []
+        },
+        {
+          "question": " Parmi les nombres suivants, lesquels sont positifs ?  ",
+          "reponse": [
+            {
+              "reponseStr": "2",
+              "right": true
+            },
+            {
+              "reponseStr": "-2",
+              "right": false
+            },
+            {
+              "reponseStr": "10",
+              "right": true
+            }
+          ],
+          "option": [],
+          "strat": []
+        },
+        {
+          "question": " Combien font un plus un ?  ",
+          "reponse": [
+            {
+              "reponseStr": "0",
+              "right": false
+            },
+            {
+              "reponseStr": "1",
+              "right": false
+            },
+            {
+              "reponseStr": "2",
+              "right": true
+            }
+          ],
+          "option": [
+            {
+              "nomOption": "ordered"
+            },
+            {
+              "nomOption": "horiz"
+            },
+            {
+              "nomOption": "id",
+              "valeur": "addition"
+            }
+          ],
+          "strat": []
+        },
+        {
+          "question": " Quelle est la capitale de la France ?  ",
+          "reponse": [
+            {
+              "reponseStr": "Paris",
+              "right": true
+            },
+            {
+              "reponseStr": "Lille",
+              "right": false
+            },
+            {
+              "reponseStr": "{-2} Ouagadougou",
+              "right": false
+            }
+          ],
+          "option": [],
+          "strat": [
+            {
+              "nomOption": "b",
+              "valeur": "2"
+            },
+            {
+              "nomOption": "m",
+              "valeur": "-1"
+            }
+          ]
+        },
+        {
+          "question": " Quelle est la plus petite région française ?  ",
+          "reponse": [
+            {
+              "reponseStr": "Corse",
+              "right": false
+            },
+            {
+              "reponseStr": "Alsace",
+              "right": true
+            },
+            {
+              "reponseStr": "Haute Normandie",
+              "right": false
+            },
+            {
+              "reponseStr": "Basse Normandie",
+              "right": false
+            }
+          ],
+          "option": [
+            {
+              "nomOption": "ordered",
+              "valeur": "0"
+            },
+            {
+              "nomOption": "horiz",
+              "valeur": "0"
+            },
+            {
+              "nomOption": "columns",
+              "valeur": "2"
+            },
+            {
+              "nomOption": "id",
+              "valeur": "13s"
+            },
+            {
+              "nomOption": ""
+            }
+          ],
+          "strat": []
+        },
+        {
+          "question": "<lines=4> Décrivez la lune.  ",
+          "reponse": [
+            {
+              "reponseStr": "[O]{0} O",
+              "right": false
+            },
+            {
+              "reponseStr": "[P]{1} P",
+              "right": false
+            },
+            {
+              "reponseStr": "[V]{2} V",
+              "right": true
+            }
+          ],
+          "option": [],
+          "strat": []
+        },
+        {
+          "question": " Vous connaissez sans doute Frédéric Chopin:  c'est un compositeur. De quel pays est-il  originaire ?  ",
+          "reponse": [
+            {
+              "reponseStr": "la Pologne",
+              "right": true
+            },
+            {
+              "reponseStr": "le Vénézuela",
+              "right": false
+            },
+            {
+              "reponseStr": "la Suisse",
+              "right": false
+            }
+          ],
+          "option": [],
+          "strat": []
+        },
+        {
+          "question": " Qu'est-ce que le code suivant écrit ?  ",
+          "reponse": [
+            {
+              "reponseStr": "[| hello, world |]",
+              "right": true
+            },
+            {
+              "reponseStr": "[| hello |]",
+              "right": false
+            },
+            {
+              "reponseStr": "[| world |]",
+              "right": false
+            }
+          ],
+          "option": [
+            {
+              "nomOption": "[verbatim]",
+              "valeur": "main( ) \r{ \rprintf(\"hello, world\\n\"); \r} \r"
+            }
+          ],
+          "strat": []
+        },
+        {
+          "question": " Choisissez parmi les expressions suivantes celles  où le mot en italique est .  ",
+          "reponse": [
+            {
+              "reponseStr": "Une balle [_bleue_]",
+              "right": true
+            },
+            {
+              "reponseStr": "Un [_livre_] rose",
+              "right": false
+            },
+            {
+              "reponseStr": "Quelle [_belle_] histoire !",
+              "right": true
+            }
+          ],
+          "option": [
+            {
+              "nomOption": "*un adjectif*"
+            }
+          ],
+          "strat": []
+        },
+        {
+          "question": " Quel est le nom de l’oiseau représenté dans l’image ci-dessous ?  !images/oiseau.png!  ",
+          "reponse": [
+            {
+              "reponseStr": "Un rouge gorge",
+              "right": true
+            },
+            {
+              "reponseStr": "Une pie",
+              "right": false
+            },
+            {
+              "reponseStr": "Un merle",
+              "right": false
+            }
+          ],
+          "option": [
+            {
+              "nomOption": "height",
+              "valeur": "2cm"
+            }
+          ],
+          "strat": []
+        },
+        {
+          "question": " Quel est le pays représenté sur la carte ci-dessous ?  !images/carte.pdf!  ",
+          "reponse": [
+            {
+              "reponseStr": "La France",
+              "right": true
+            },
+            {
+              "reponseStr": "L’Espagne",
+              "right": false
+            },
+            {
+              "reponseStr": "L’Italie",
+              "right": false
+            }
+          ],
+          "option": [
+            {
+              "nomOption": "width",
+              "valeur": ".75\\linewidth"
+            }
+          ],
+          "strat": [
+            {
+              "nomOption": "center"
+            }
+          ]
+        }
+      ],
+      "option": [
+        {
+          "nomOption": "Shuffle",
+          "valeur": "0"
+        },
+        {
+          "nomOption": "numquestions",
+          "valeur": "4"
+        },
+        {
+          "nomOption": "group",
+          "valeur": "6"
+        },
+        {
+          "nomOption": ""
+        }
+      ],
+      "titre": "[_[*Géographie – QCM 1 : *]_]"
+    }
+  ]
+]
