@@ -1,1 +1,1 @@
-web : node amc-converter.js
+web: node amc-converter.js
