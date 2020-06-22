@@ -37,4 +37,15 @@ module.exports=class Question{
         setOption(options){
             this.option = options;
         }
+
+        isMultipleReponse(){
+            let compteur = 0;
+            let reponseArr = this.getReponse();
+            for (let i = 0 ; i<reponseArr.length;i++){
+                if (reponseArr[i].getRight()==true){
+                    compteur++;
+                }
+            }
+            return compteur>1;
+        }
 }

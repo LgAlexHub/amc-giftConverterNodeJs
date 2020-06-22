@@ -1,0 +1,282 @@
+[
+  {
+    "question": "Vous connaissez sans doute Frédéric Chopin:c'est un compositeur. De quel pays est-iloriginaire ?",
+    "reponse": [
+      {
+        "reponseStr": "la Pologne ",
+        "right": true
+      },
+      {
+        "reponseStr": "le Vénézuela ",
+        "right": false
+      },
+      {
+        "reponseStr": "la Suisse ",
+        "right": false
+      }
+    ],
+    "option": [
+      {
+        "nomOption": "id",
+        "valeur": "Q06"
+      }
+    ],
+    "strat": null
+  },
+  {
+    "groupeQ": [
+      {
+        "question": "Quelle est la capitale du Cameroun ?",
+        "reponse": [
+          {
+            "reponseStr": "Yaoundé ",
+            "right": true
+          },
+          {
+            "reponseStr": "Douala ",
+            "right": false
+          },
+          {
+            "reponseStr": "Kribi ",
+            "right": false
+          }
+        ],
+        "option": [
+          {
+            "nomOption": "id",
+            "valeur": "Q00"
+          }
+        ],
+        "strat": null
+      },
+      {
+        "question": "Parmi les nombres suivants, lesquels sont positifs ?",
+        "reponse": [
+          {
+            "reponseStr": "2 ",
+            "right": true
+          },
+          {
+            "reponseStr": "-2 ",
+            "right": false
+          },
+          {
+            "reponseStr": "10 ",
+            "right": true
+          }
+        ],
+        "option": [
+          {
+            "nomOption": "id",
+            "valeur": "Q01"
+          }
+        ],
+        "strat": null
+      },
+      {
+        "question": "Combien font un plus un ?",
+        "reponse": [
+          {
+            "reponseStr": "0 ",
+            "right": false
+          },
+          {
+            "reponseStr": "1 ",
+            "right": false
+          },
+          {
+            "reponseStr": "2 ",
+            "right": true
+          }
+        ],
+        "option": [
+          {
+            "nomOption": "id",
+            "valeur": "addition"
+          }
+        ],
+        "strat": null
+      },
+      {
+        "question": "Quelle est la capitale de la France ?",
+        "reponse": [
+          {
+            "reponseStr": "Paris ",
+            "right": true
+          },
+          {
+            "reponseStr": "Lille ",
+            "right": false
+          },
+          {
+            "reponseStr": "Ouagadougou ",
+            "right": false
+          }
+        ],
+        "option": [
+          {
+            "nomOption": "id",
+            "valeur": "Q03"
+          }
+        ],
+        "strat": null
+      },
+      {
+        "question": "Quelle est la plus petite région française ?",
+        "reponse": [
+          {
+            "reponseStr": "Corse ",
+            "right": false
+          },
+          {
+            "reponseStr": "Alsace ",
+            "right": true
+          },
+          {
+            "reponseStr": "Haute Normandie ",
+            "right": false
+          },
+          {
+            "reponseStr": "Basse Normandie ",
+            "right": false
+          }
+        ],
+        "option": [
+          {
+            "nomOption": "id",
+            "valeur": "13s"
+          }
+        ],
+        "strat": null
+      },
+      {
+        "question": "Vous connaissez sans doute Frédéric Chopin:c'est un compositeur. De quel pays est-iloriginaire ?",
+        "reponse": [
+          {
+            "reponseStr": "la Pologne ",
+            "right": true
+          },
+          {
+            "reponseStr": "le Vénézuela ",
+            "right": false
+          },
+          {
+            "reponseStr": "la Suisse ",
+            "right": false
+          }
+        ],
+        "option": [
+          {
+            "nomOption": "id",
+            "valeur": "Q06"
+          }
+        ],
+        "strat": null
+      }
+    ],
+    "option": null,
+    "titre": " Géographie  QCM 1  "
+  },
+  {
+    "groupeQ": [
+      {
+        "question": "Qu'est-ce que le code suivant écrit ?main( )\\{printf(\"hello, world\\n\");\\}\r\n",
+        "reponse": [
+          {
+            "reponseStr": "[| hello, world |] ",
+            "right": true
+          },
+          {
+            "reponseStr": "[| hello |] ",
+            "right": false
+          },
+          {
+            "reponseStr": "[| world |] ",
+            "right": false
+          }
+        ],
+        "option": [
+          {
+            "nomOption": "id",
+            "valeur": "Q07"
+          }
+        ],
+        "strat": null
+      },
+      {
+        "question": "Choisissez parmi les expressions suivantes cellesoù le mot en italique est .",
+        "reponse": [
+          {
+            "reponseStr": "Une balle [_bleue_] ",
+            "right": true
+          },
+          {
+            "reponseStr": "Un [_livre_] rose ",
+            "right": false
+          },
+          {
+            "reponseStr": "Quelle [_belle_] histoire ! ",
+            "right": true
+          }
+        ],
+        "option": [
+          {
+            "nomOption": "id",
+            "valeur": "Q08"
+          }
+        ],
+        "strat": null
+      },
+      {
+        "question": "Quel est le nom de loiseau représenté dans limage ci-dessous ?",
+        "reponse": [
+          {
+            "reponseStr": "Un rouge gorge ",
+            "right": true
+          },
+          {
+            "reponseStr": "Une pie ",
+            "right": false
+          },
+          {
+            "reponseStr": "Un merle ",
+            "right": false
+          }
+        ],
+        "option": [
+          {
+            "nomOption": "id",
+            "valeur": "Q09"
+          }
+        ],
+        "strat": null
+      },
+      {
+        "question": "Quel est le pays représenté sur la carte ci-dessous ?",
+        "reponse": [
+          {
+            "reponseStr": "La France ",
+            "right": true
+          },
+          {
+            "reponseStr": "LEspagne ",
+            "right": false
+          },
+          {
+            "reponseStr": "LItalie ",
+            "right": false
+          }
+        ],
+        "option": [
+          {
+            "nomOption": "id",
+            "valeur": "Q010"
+          }
+        ],
+        "strat": null
+      }
+    ],
+    "option": null,
+    "titre": " fausse catégorie"
+  }
+]
