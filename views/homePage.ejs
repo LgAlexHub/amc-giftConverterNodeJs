@@ -25,24 +25,7 @@
             </a>
         </div>
     </nav>
-    <form action="/convertAmc" onsubmit="formSubmit();" method="POST" enctype="multipart/form-data">
-        <h2>Traduction via texte brute</h2>
-        <textarea class="textarea" type="text" id="area" class="textarea is-info" name="coreFile"
-            placeholder="Copier-coller le contenu de votre fichier AMC-TXT"></textarea>
-        <h2 style="margin-top:30px;">Traduction via fichier odt, doc</h2>
-        <input class="input" type="file" id="files" name="avatar" />
-        <input style="margin-top:30px;" type="submit" class="button is-link" name="envoie" value="CONVERTIR" />
-    </form>
 
 </body>
-
-<script>
-    function formSubmit() {
-        setTimeout(() => {
-            document.getElementById('area').value = "";
-        }, 1);
-        return true;
-    }
-</script>
 
 </html>

@@ -8,6 +8,23 @@
 </head>
 
 <body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/fromGift">
+                GIFT vers AMC
+            </a>
+        </div>
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/fromAMC">
+                AMC vers GIFT
+            </a>
+        </div>
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/home">
+                Accueil
+            </a>
+        </div>
+    </nav>
     <form action="/convertGift" onsubmit="formSubmit();" method="POST" enctype="multipart/form-data">
         <h2>Traduction via texte brute</h2>
         <textarea class="textarea" type="text" id="area" class="textarea is-info" name="coreFile"
@@ -16,6 +33,7 @@
         <input  class="input" type="file" id="files" name="avatar" />
         <input style="margin-top:30px;" type="submit" class="button is-link" name="envoie" value="CONVERTIR" />
     </form>
+
 </body>
 
 <script>

@@ -24,6 +24,10 @@ app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+app.get('/home',function(req,res){
+    res.render('homePage.ejs');
+})
+
 app.get('/fromAMC', function (req, res) {
     res.render('templatesAmc.ejs');
 });
@@ -54,7 +58,7 @@ app.post('/convertAmc', upload.single('avatar'), async function (req, res) {
         idk = parser.headerParse(rawDocument);
         question = translator.main(idk[2]);
         try {
-            fs.unlinkSync(req.file + typeFile);
+            fs.unlinkSync(req.file.path + typeFile);
         } catch (Exception) {
             console.error(Exception);
         }
@@ -102,5 +106,9 @@ app.get('/download', function (req, res) {
     res.setHeader("Content-Disposition", `attachment; filename=importConverter.txt`);
     res.send(fileDownload);
 });
+
+app.get('*',function(req,res){
+    res.redirect('/home');
+})
 
 app.listen(process.env.PORT || 8080);
