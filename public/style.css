@@ -1,0 +1,23 @@
+.navBar{
+    border:solid;
+    border-width: 0px 1px 0px 0px;
+}
+
+nav{
+    margin-bottom: 1%;
+}
+
+.titrePage{
+    text-align: center;
+    margin-bottom: 2%;
+    size:1.2em;
+    font-weight: bold;
+}
+
+#infoBulle{
+    background-color: white;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px 1px 1px 1px;
+
+}

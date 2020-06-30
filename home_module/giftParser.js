@@ -35,19 +35,14 @@ module.exports = {
                 while ((rawData.charAt(indice) != '}') || (rawData.charAt(indice - 1) == "\\" && rawData.charAt(indice) == "}")) {
                     indice++;
                 }
-                let string = rawData.slice(i + 1, indice).replace('\n', "").replace('\r', "");
-                if (string.match(/#(.*?)[\=|\~|\}]/) != null) {
-                    string += "}";
-                    while (string.match(/#(.*?)[\=|\~|\}]/) != null) {
-                        let lastChar = string.match(/#(.*?)[\=|\~|}]/)[0].charAt(string.match(/#(.*?)[\=|\~|\}]/)[0].length - 1);
-                        if (lastChar == '=') {
-                            string = string.replace(/#(.*?)[\=|\~|\}]/, "=");
-                        } else if (lastChar == '~') {
-                            string = string.replace(/#(.*?)[\=|\~|\}]/, "~");
-                        } else {
-                            string = string.replace(/#(.*?)[\=|\~|\}]/, "");
-                        }
-                    }
+                let string = "{"+rawData.slice(i + 1, indice).replace(/[\n]/, "").replace(/[\r]/, "")+"}";
+                //console.log("REPONSE ->"+string);
+                if (string.match(/#(.*)/)!=null) {
+                console.log("REPONSE ->" +string);
+                for (let  i = 0 ; i < string.match(/#(.*)/).length;i++){
+                    console.log("MATCH -> ["+i+"] "+string.match(/#(.*)[\n|\r|.]/)[0]);
+                }
+                
                 }
                 if (string.length > 5) {
                     if (string.match(regexMulti) != null) {
@@ -118,10 +113,12 @@ module.exports = {
             }
         }
         for (let i = 0; i < array.length; i++) {
-            if (array[i].match(/\%(.*?)\%/)[1].match(/-[0-9]{1,3}/) != null) {
-                resArray.push(new reponse(array[i].replace(regexMulti, "").replace(/[\=|\~]/, ""), false));
-            } else {
-                resArray.push(new reponse(array[i].replace(regexMulti, "").replace(/[\=|\~]/, ""), true));
+            if (array[i].match(/\%(.*?)\%/) != null) {
+                if (array[i].match(/\%(.*?)\%/)[1].match(/-[0-9]{1,3}/) != null) {
+                    resArray.push(new reponse(array[i].replace(regexMulti, "").replace(/[\=|\~]/, ""), false));
+                } else {
+                    resArray.push(new reponse(array[i].replace(regexMulti, "").replace(/[\=|\~]/, ""), true));
+                }
             }
         }
         return resArray;
@@ -175,7 +172,7 @@ module.exports = {
                     indice++;
                 }
                 grpArray.push(this.questionParser(dataRaw.slice(i, indice + 1)));
-                i = indice-1;
+                i = indice - 1;
             }
         }
         return grpArray;

@@ -44,9 +44,31 @@ module.exports = {
             });
         });
     },
-    fileRemover:function fileRemover(filePath) {
-        fs.unlink(filePath,()=>{
-            console.log("Deleted");
-        });
+    fileRemover: function fileRemover(filePath, typeFile) {
+        try {
+            fs.unlinkSync(filePath + typeFile);
+        } catch (Exception) {
+            console.error(Exception);
+        }
+    },
+    fileReader:async function fileReader(originalFileName, filePath) {
+        //req.file.originalname
+        //req.file.path
+        let typeFile = this.extensionSeeker(originalFileName);
+        let rawDocument;
+        switch (typeFile) {
+            case ".txt":
+                rawDocument = await this.asyncTextRact(filePath, typeFile);
+                break;
+            case ".odt":
+                rawDocument = await this.asyncTextRact(filePath, typeFile);
+                break;
+            case ".doc":
+                rawDocument = await this.wordExtract(filePath);
+                break;
+            default:
+                rawDocument = null;
+        }
+        return rawDocument;
     }
 }

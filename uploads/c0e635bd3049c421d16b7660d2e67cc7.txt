@@ -1,0 +1,73 @@
+$CATEGORY: [_[*Géographie  QCM 1 : *]_]
+
+::Q00::  Quelle est la capitale du Cameroun ?
+{
+=Yaoundé 
+~Douala 
+~Kribi 
+}
+
+::Q01::  Parmi les nombres suivants, lesquels sont positifs ?
+{
+~%50%2 
+~%-100%-2 
+~%50%10 
+}
+
+::addition::  Combien font un plus un ?
+{
+~0 
+~1 
+=2 
+}
+
+::Q03::  Quelle est la capitale de la France ?
+{
+~%100%Paris 
+~%-100%Lille 
+~%-100%Ouagadougou 
+}
+
+::13s::  Quelle est la plus petite région française ?
+{
+~Corse 
+=Alsace 
+~Haute Normandie 
+~Basse Normandie 
+}
+
+::Q06::  Vous connaissez sans doute Frédéric Chopin:c'est un compositeur. De quel pays est-iloriginaire ?
+{
+=la Pologne 
+~le Vénézuela 
+~la Suisse 
+}
+
+::Q07::  Qu'est-ce que le code suivant écrit ?
+main( )\{printf("hello, world\n");\}
+{
+=[| hello, world |] 
+~[| hello |] 
+~[| world |] 
+}
+
+::Q08::  Choisissez parmi les expressions suivantes cellesoù le mot en italique est .
+{
+~%50%Une balle [_bleue_] 
+~%-100%Un [_livre_] rose 
+~%50%Quelle [_belle_] histoire ! 
+}
+
+::Q09::  Quel est le nom de loiseau représenté dans limage ci-dessous ?
+{
+=Un rouge gorge 
+~Une pie 
+~Un merle 
+}
+
+::Q010::  Quel est le pays représenté sur la carte ci-dessous ?
+{
+=La France 
+~LEspagne 
+~LItalie 
+}

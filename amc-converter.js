@@ -13,18 +13,17 @@ const app = express();
 const bodyParser = require('body-parser');
 const multer = require('multer');
 const upload = multer({ dest: 'uploads/' });
-const session = require('express-session');
-const giftTranslater = require('./home_module/giftTranslater.js');
+//const session = require('express-session');
 const regexLetter = /([A-Za-z0-9])/;
 var rawDocument = null;
-var fileDownload;
+var fileDownload = null;
 
 
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.get('/home',function(req,res){
+app.get('/home', function (req, res) {
     res.render('homePage.ejs');
 })
 
@@ -32,36 +31,19 @@ app.get('/fromAMC', function (req, res) {
     res.render('templatesAmc.ejs');
 });
 
-app.get('/fromGIFT', function(req,res){
+app.get('/fromGIFT', function (req, res) {
     res.render('templatesGift.ejs');
 })
 
 app.post('/convertAmc', upload.single('avatar'), async function (req, res) {
-    let question;
-    let idk;
+    let question = null;
     if (req.body.coreFile.match(regexLetter) != null) {
         rawDocument = req.body.coreFile;
-        idk = parser.headerParse(rawDocument);
-        question = translator.main(idk[2]);
+        question = translator.main(parser.headerParse(rawDocument)[2]);
     } else if (req.file != null) {
-        let typeFile = support.extensionSeeker(req.file.originalname);
-        switch (typeFile) {
-            case ".txt":
-                rawDocument = await support.asyncTextRact(req.file.path, typeFile);
-                break;
-            case ".odt":
-                rawDocument = await support.asyncTextRact(req.file.path, typeFile);
-                break;
-            case ".doc":
-                rawDocument = await support.wordExtract(req.file.path);
-        }
-        idk = parser.headerParse(rawDocument);
-        question = translator.main(idk[2]);
-        try {
-            fs.unlinkSync(req.file.path + typeFile);
-        } catch (Exception) {
-            console.error(Exception);
-        }
+        rawDocument = await support.fileReader(req.file.originalname, req.file.path);
+        question = translator.main(parser.headerParse(rawDocument)[2]);
+        support.fileRemover(req.file.path, support.extensionSeeker(req.file.originalname));
     } else {
         console.log('Aucun des cas');
     }
@@ -71,35 +53,18 @@ app.post('/convertAmc', upload.single('avatar'), async function (req, res) {
 
 app.post('/convertGift', upload.single('avatar'), async function (req, res) {
     let question;
-    let idk;
     if (req.body.coreFile.match(regexLetter) != null) {
         rawDocument = req.body.coreFile;
-        idk = giftParser.bodyParser(rawDocument);
-        question = amcTranslater.bodyTranslator(idk)
+        question = amcTranslater.bodyTranslator(giftParser.bodyParser(rawDocument));
     } else if (req.file != null) {
-        let typeFile = support.extensionSeeker(req.file.originalname);
-        switch (typeFile) {
-            case ".txt":
-                rawDocument = await support.asyncTextRact(req.file.path, typeFile);
-                break;
-            case ".odt":
-                rawDocument = await support.asyncTextRact(req.file.path, typeFile);
-                break;
-            case ".doc":
-                rawDocument = await support.wordExtract(req.file.path);
-        }
-        idk = giftParser.bodyParser(rawDocument);
-        question = amcTranslater.bodyTranslator(idk)
-        try {
-            fs.unlinkSync(req.file.path + typeFile);
-        } catch (Exception) {
-            console.error(Exception);
-        }
+        rawDocument = await support.fileReader(req.file.originalname, req.file.path);
+        question = await amcTranslater.bodyTranslator(giftParser.bodyParser(rawDocument));
+        support.fileRemover(req.file.path, support.extensionSeeker(req.file.originalname));
     } else {
         console.log('Aucun des cas');
     }
     fileDownload = question;
-    res.redirect("/download");
+    //res.redirect("/download");
 });
 
 app.get('/download', function (req, res) {
@@ -107,7 +72,7 @@ app.get('/download', function (req, res) {
     res.send(fileDownload);
 });
 
-app.get('*',function(req,res){
+app.get('*', function (req, res) {
     res.redirect('/home');
 })
 

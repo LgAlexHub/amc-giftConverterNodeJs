@@ -2,9 +2,10 @@
 <html>
 
 <head>
-    <title>Convertisseur AMC-TEXT vers GIFT</title>
+    <title>Convertisseur AMC vers GIFT</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.2/css/bulma.css"
         integrity="sha256-8BrtNNtStED9syS9F+xXeP815KGv6ELiCfJFQmGi1Bg=" crossorigin="anonymous" />
+    <link href="/style.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -24,12 +25,21 @@
                 Accueil
             </a>
         </div>
+        <hr>
     </nav>
+
+    <h1 class="titrePage">Page de converion de fichier AMC vers fichier GIFT</h1>
     <form action="/convertAmc" onsubmit="formSubmit();" method="POST" enctype="multipart/form-data">
-        <h2>Traduction via texte brute</h2>
+        <div>
+            <h2>Traduction via texte brute <img id="aide1" style="border-style: solid;" width="1%" height="1%"
+                    src="/canvas.png" /></h2>
+
+        <div>
+
         <textarea class="textarea" type="text" id="area" class="textarea is-info" name="coreFile"
             placeholder="Copier-coller le contenu de votre fichier AMC-TXT"></textarea>
-        <h2 style="margin-top:30px;">Traduction via fichier odt, doc</h2>
+        <h2 style="margin-top:30px;">Traduction via fichier odt, doc <img id="aide2" style="border-style: solid;"
+                width="1%" height="1%" src="/canvas.png" /></h2>
         <input class="input" type="file" id="files" name="avatar" />
         <input style="margin-top:30px;" type="submit" class="button is-link" name="envoie" value="CONVERTIR" />
     </form>
@@ -43,6 +53,43 @@
         }, 1);
         return true;
     }
+
+    let firstElement = document.getElementById('aide1');
+    let secondElement = document.getElementById('aide2');
+    firstElement.addEventListener("mouseover", (event) => {
+        appendElement(event.target);
+    });
+
+    firstElement.addEventListener("mouseleave",(event)=>{
+        document.getElementById("infoBulle").remove();
+       
+    });
+    secondElement.addEventListener("mouseover", (event) => {
+        appendElement(event.target);
+    });
+
+    secondElement.addEventListener("mouseleave",(event)=>{
+        document.getElementById("infoBulle").remove();
+       
+    })
+
+
+
+    function appendElement(parentElement) {
+        let content;
+        let text = ["Ici vous devez déposer un fichier contenant vos questions AMC sous form txt,odt ou doc", "Ce formulaire est ici vous vous voulez déposer directement le contenu de votre fichier en copier-coller"];
+        let div = document.createElement("div");
+        console.log(parentElement.id);
+        if (parentElement.id == "aide2") {
+            content = document.createTextNode(text[0]);
+        } else {
+            content =document.createTextNode(text[1]);
+        }
+        div.appendChild(content);
+        div.id = "infoBulle";
+        parentElement.parentNode.appendChild(div);
+    }
+
 </script>
 
 </html>
